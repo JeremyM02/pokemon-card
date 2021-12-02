@@ -2,30 +2,34 @@ extends layout
 
 block content
   .container
-    .card
-      .card-row.header
-        p.name  Pikachu
-        p.healthpoints  50 HP
-        img.type(src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/480px-Pok%C3%A9mon_Electric_Type_Icon.svg.png' )
-      img.pokemon-img(src='https://secure.img1-fg.wfcdn.com/im/77981853/resize-h755-w755%5Ecompr-r85/8470/84707680/Pokemon+Pikachu+Wall+Decal.jpg')
-      .card-row.move-row.first
-        img.type(src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/480px-Pok%C3%A9mon_Electric_Type_Icon.svg.png' )
-        p.move-name  Gnaw
-        p.damage  10
-      .card-row.move-row.second
-        img.type(src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/480px-Pok%C3%A9mon_Electric_Type_Icon.svg.png')
-        img.type(src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/480px-Pok%C3%A9mon_Electric_Type_Icon.svg.png')
-        p.move-name  Lightning Bolt
-        p.damage  50
-      .card-row.description-row
-        p weakness
-        p resistance
-        p retreat cost
-      .card-row.description-type-row
-        .weakness.type-row
-          img.type(src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/480px-Pok%C3%A9mon_Electric_Type_Icon.svg.png')
-        .resistance.type-row
-          img.type(src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/480px-Pok%C3%A9mon_Electric_Type_Icon.svg.png')
-        .retreat-cost.type-row
-          img.type(src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/480px-Pok%C3%A9mon_Electric_Type_Icon.svg.png')
-          img.type(src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/480px-Pok%C3%A9mon_Electric_Type_Icon.svg.png')
+    each card in cards
+      .card
+        .card-row.header
+          p.name=card.pokemonName
+          p.healthpoints=card.healthpoints
+          img.type(src=card.pokemonType)
+        img.pokemon-img(src=card.pokemonImage)
+        .card-row.move-row.first
+          -for(let i = 0; i<card.firstTypeAmount; i++)
+            img.type(src=card.firstMoveImage)
+
+          p.move-name=card.firstMoveName
+          p.damage=card.firstMoveDamage
+        .card-row.move-row.second
+          -for(let i = 0; i<card.secondTypeAmount; i++)
+            img.type(src=card.secondMoveImage)
+
+          p.move-name=card.secondMoveName
+          p.damage=card.secondMoveDamage
+        .card-row.description-row
+          p weakness
+          p resistance
+          p retreat cost
+        .card-row.description-type-row
+          .weakness.type-row
+            img.type(src=card.weaknessTypeImage)
+          .resistance.type-row
+            img.type(src=card.resistanceTypeImage)
+          .retreat-cost.type-row
+            -for(let i = 0; i<card.retreatCostAmount; i++)
+              img.type(src=card.retreatCostImage)
