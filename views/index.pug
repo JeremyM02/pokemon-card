@@ -3,7 +3,7 @@ extends layout
 block content
   .container
     each card in cards
-      .card
+      .card(style='background-color: card.backgroundColor')
         .card-row.header
           p.name=card.pokemonName
           p.healthpoints=card.healthpoints

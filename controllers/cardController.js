@@ -17,6 +17,7 @@ module.exports.viewAll = function(req, res, next) {
         resistanceTypeImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/480px-Pok%C3%A9mon_Electric_Type_Icon.svg.png',
         retreatCostImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/480px-Pok%C3%A9mon_Electric_Type_Icon.svg.png',
         retreatCostAmount: 2,
+        backgroundColor: '#F5E993',
     },
     {
         id: 2,
@@ -36,6 +37,7 @@ module.exports.viewAll = function(req, res, next) {
         resistanceTypeImage: 'https://www.nicepng.com/png/full/810-8104664_rethink-the-bottle-water-energy-symbol.png',
         retreatCostImage: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416764_1280.png',
         retreatCostAmount: 2,
+        backgroundColor: '#34bde5',
     }];
     res.render('index', {cards});
 };
