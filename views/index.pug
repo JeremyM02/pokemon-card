@@ -3,7 +3,7 @@ extends layout
 block content
   .container
     each card in cards
-      .card(style='background-color: card.backgroundColor')
+      div(class=`card ${card.pokemonName}`)
         .card-row.header
           p.name=card.pokemonName
           p.healthpoints=card.healthpoints
@@ -31,5 +31,7 @@ block content
           .resistance.type-row
             img.type(src=card.resistanceTypeImage)
           .retreat-cost.type-row
-            -for(let i = 0; i<card.retreatCostAmount; i++)
+            - for(let i = 0; i<card.retreatCostAmount; i++)
               img.type(src=card.retreatCostImage)
+
+

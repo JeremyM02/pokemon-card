@@ -1,4 +1,4 @@
-module.exports.viewAll = function(req, res, next) {
+module.exports.viewAll = function(req, res) {
     const cards = [{
         id: 1,
         pokemonName: 'Pikachu',
@@ -17,7 +17,6 @@ module.exports.viewAll = function(req, res, next) {
         resistanceTypeImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/480px-Pok%C3%A9mon_Electric_Type_Icon.svg.png',
         retreatCostImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/480px-Pok%C3%A9mon_Electric_Type_Icon.svg.png',
         retreatCostAmount: 2,
-        backgroundColor: '#F5E993',
     },
     {
         id: 2,
@@ -31,7 +30,7 @@ module.exports.viewAll = function(req, res, next) {
         firstMoveDamage: '20',
         secondMoveImage: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416764_1280.png',
         secondTypeAmount: 3,
-        seccondMoveName: 'Hydro Pump',
+        secondMoveName: 'Hydro Pump',
         secondMoveDamage: 50,
         weaknessTypeImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Pok%C3%A9mon_Grass_Type_Icon.svg/480px-Pok%C3%A9mon_Grass_Type_Icon.svg.png',
         resistanceTypeImage: 'https://www.nicepng.com/png/full/810-8104664_rethink-the-bottle-water-energy-symbol.png',

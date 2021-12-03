@@ -28,6 +28,12 @@ body {
           rgba(0,0,0,0.06) 0 1px 2px 0
 }
 
+.Pikachu{
+  background-color: #F5E993;
+}
+.Lapras {
+  background-color: #6eb4e6;
+}
 .card-row {
   display: flex;
   flex-direction: row;
@@ -62,6 +68,7 @@ body {
   margin: 0 auto;
   border: 3px solid #FFD700;
   border-radius: 8px;
+  background-color: white;
 }
 
 .move-row {
