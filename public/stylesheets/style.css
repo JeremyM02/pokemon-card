@@ -34,6 +34,38 @@ body {
 .Lapras {
   background-color: #6eb4e6;
 }
+.Sandshrew {
+  background-color: #e29449;
+}
+.Kabuto {
+  background-color: #eea537;
+}
+.Exeggutor {
+  background-color: #93c98a;
+}
+.Ekans {
+  background-color: #bc83ba;
+}
+.Rhyhorn {
+  background-color: #d7852d;
+}
+.Hitmonchan {
+  background-color: #fd7448;
+}
+.Dragonair {
+  background-color: #e7e1df;
+}
+.Nidorina {
+  background-color: #b48bbf;
+}
+.Ponyta {
+  background-color: #ebaf7d;
+}
+.Ninetails {
+  background-color: #f2643f;
+}
+
+
 .card-row {
   display: flex;
   flex-direction: row;

@@ -1,42 +1,5 @@
-module.exports.viewAll = function(req, res) {
-    const cards = [{
-        id: 1,
-        pokemonName: 'Pikachu',
-        healthpoints: '50 HP',
-        pokemonType: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/480px-Pok%C3%A9mon_Electric_Type_Icon.svg.png',
-        pokemonImage: 'https://secure.img1-fg.wfcdn.com/im/77981853/resize-h755-w755%5Ecompr-r85/8470/84707680/Pokemon+Pikachu+Wall+Decal.jpg',
-        firstMoveImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/480px-Pok%C3%A9mon_Electric_Type_Icon.svg.png',
-        firstTypeAmount: 1,
-        firstMoveName: 'Gnaw',
-        firstMoveDamage: 10,
-        secondMoveImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/480px-Pok%C3%A9mon_Electric_Type_Icon.svg.png',
-        secondTypeAmount: 2,
-        secondMoveName: 'Lightning Shock',
-        secondMoveDamage: 50,
-        weaknessTypeImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/480px-Pok%C3%A9mon_Electric_Type_Icon.svg.png',
-        resistanceTypeImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/480px-Pok%C3%A9mon_Electric_Type_Icon.svg.png',
-        retreatCostImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/480px-Pok%C3%A9mon_Electric_Type_Icon.svg.png',
-        retreatCostAmount: 2,
-    },
-    {
-        id: 2,
-        pokemonName: 'Lapras',
-        healthpoints: '120 HP',
-        pokemonType: 'https://www.nicepng.com/png/full/810-8104664_rethink-the-bottle-water-energy-symbol.png',
-        pokemonImage: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/131.png',
-        firstMoveImage: 'https://www.nicepng.com/png/full/810-8104664_rethink-the-bottle-water-energy-symbol.png',
-        firstTypeAmount: 1,
-        firstMoveName: 'Aqua Bullet',
-        firstMoveDamage: '20',
-        secondMoveImage: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416764_1280.png',
-        secondTypeAmount: 3,
-        secondMoveName: 'Hydro Pump',
-        secondMoveDamage: 50,
-        weaknessTypeImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Pok%C3%A9mon_Grass_Type_Icon.svg/480px-Pok%C3%A9mon_Grass_Type_Icon.svg.png',
-        resistanceTypeImage: 'https://www.nicepng.com/png/full/810-8104664_rethink-the-bottle-water-energy-symbol.png',
-        retreatCostImage: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416764_1280.png',
-        retreatCostAmount: 2,
-        backgroundColor: '#34bde5',
-    }];
+const {Pokemon} = require('../models');
+module.exports.viewAll = async function(req, res) {
+    const cards = await Pokemon.findAll();
     res.render('index', {cards});
 };

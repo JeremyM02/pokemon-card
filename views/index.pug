@@ -10,13 +10,13 @@ block content
           img.type(src=card.pokemonType)
         img.pokemon-img(src=card.pokemonImage)
         .card-row.move-row.first
-          -for(let i = 0; i<card.firstTypeAmount; i++)
+          -for(let i = 0; i<card.firstMoveAmount; i++)
             img.type(src=card.firstMoveImage)
 
           p.move-name=card.firstMoveName
           p.damage=card.firstMoveDamage
         .card-row.move-row.second
-          -for(let i = 0; i<card.secondTypeAmount; i++)
+          -for(let i = 0; i<card.secondMoveAmount; i++)
             img.type(src=card.secondMoveImage)
 
           p.move-name=card.secondMoveName
