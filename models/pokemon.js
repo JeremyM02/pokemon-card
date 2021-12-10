@@ -14,22 +14,22 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Pokemon.init({
-    pokemonName: DataTypes.STRING,
-    healthpoints: DataTypes.STRING,
-    pokemonType: DataTypes.STRING,
-    pokemonImage: DataTypes.STRING,
-    firstMoveImage: DataTypes.STRING,
-    firstMoveName: DataTypes.STRING,
-    firstMoveAmount: DataTypes.INTEGER,
-    firstMoveDamage: DataTypes.INTEGER,
-    secondMoveImage: DataTypes.STRING,
-    secondMoveName: DataTypes.STRING,
-    secondMoveAmount: DataTypes.INTEGER,
-    secondMoveDamage: DataTypes.INTEGER,
-    weaknessTypeImage: DataTypes.STRING,
-    resistanceTypeImage: DataTypes.STRING,
-    retreatCostAmount: DataTypes.STRING,
-    retreatCostImage: DataTypes.STRING
+    pokemonName: DataTypes.STRING, //text
+    healthpoints: DataTypes.STRING, //text
+    pokemonType: DataTypes.STRING, //image
+    pokemonImage: DataTypes.STRING, //image
+    firstMoveImage: DataTypes.STRING, //image
+    firstMoveName: DataTypes.STRING, //text
+    firstMoveAmount: DataTypes.INTEGER, //number
+    firstMoveDamage: DataTypes.INTEGER, //number
+    secondMoveImage: DataTypes.STRING, //image
+    secondMoveName: DataTypes.STRING, //text
+    secondMoveAmount: DataTypes.INTEGER, //number
+    secondMoveDamage: DataTypes.INTEGER, //number
+    weaknessTypeImage: DataTypes.STRING, //image
+    resistanceTypeImage: DataTypes.STRING, //image
+    retreatCostAmount: DataTypes.STRING, //number
+    retreatCostImage: DataTypes.STRING //image
   }, {
     sequelize,
     modelName: 'Pokemon',

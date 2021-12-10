@@ -1,0 +1,63 @@
+extends layout
+
+block content
+    div.form-panel
+    form(action=`/edit/${card.id}` method='post')
+        div.form-input
+            label(for='name') Name:
+            input(type='text' id='name' name='name' value=card.pokemonName)
+        div.form-input
+            label(for='health') Healthpoints:
+            input(type='text' id='health' name='health' value=card.healthpoints)
+        div.form-input
+            label(for='pokemon-type') Image of Pokemon's type:
+            input(type='text' id='pokemon-type' name='pokemon-type' value=card.pokemonType)
+        div.form-input
+            label(for='pokemon-image') Image of Pokemon:
+            input(type='text' id='pokemon-image' name='pokemon-image' value=card.pokemonImage)
+        div.form-input
+            label(for='first-move-image') First move's elemental type image:
+            input(type='text' id='first-move-image' name='first-move-image' value=card.firstMoveImage)
+        div.form-input
+            label(for='first-move-name') First move's name:
+            input(type='text' id='first-move-name' name='first-move-name' value=card.firstMoveName)
+        div.form-input
+            label(for='first-move-amount') First move's energy cost:
+            select(id='first-move-amount' name='first-move-amount' autocomplete='off')
+                -for(let i = 1; i<= 4; i++)
+                    option(value=i selected = (first-move-amount === card.firstMoveAmount)) #{i}
+        div.form-input
+            label(for='first-move-damage') First move's damage:
+            input(type='text' id='first-move-damage' name='first-move-damage' value=card.firstMoveDamage)
+        div.form-input
+            label(for='second-move-image') Second move's elemental type image:
+            input(type='text' id='second-move-image' name='second-move-image' value=card.secondMoveImage)
+        div.form-input
+            label(for='second-move-name') Second move's name:
+            input(type='text' id='second-move-name' name='second-move-name' value=card.secondMoveName)
+        div.form-input
+            label(for='second-move-amount') Second move's energy cost:
+            select(id='second-move-amount' name='second-move-amount' autocomplete='off')
+                -for(let i = 1; i<= 4; i++)
+                    option(value=i selected = (second-move-amount === card.secondMoveDamage)) #{i}
+        div.form-input
+            label(for='second-move-damage') Second move's damage:
+            input(type='text' id='second-move-damage' name='second-move-damage' value=card.secondMoveDamage)
+        div.form-input
+            label(for='weakness') Image of Pokemon's weakness
+            input(type='text' id='weakness' name='weakness' value=card.weaknessTypeImage)
+        div.form-input
+            label(for='resistance') Image of Pokemon's resistance
+            input(type='text' id='resistance' name='resistance' value=card.resistanceTypeImage)
+        div.form-input
+            label(for='retreat-cost') Energy needed for Pokemon's retreat:
+            select(id='retreat-cost' name='retreat-cost' autocomplete='off')
+                -for(let i = 1; i<= 3; i++)
+                    option(value=i selected = (retreat-cost === card.retreatCostAmount)) #{i}
+        div.form-input
+            label(for='retreat-image') Pokemon's element needed for retreat:
+            input(type='text' id='retreat-image' name='retreat-imgae' value=card.retreatCostImage)
+        div.button-row
+            a.button.cancel(href='/') Cancel
+            a.button.delete(href=`/delete/${card.id}`) Delete
+
