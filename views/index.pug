@@ -3,5 +3,7 @@ extends layout
 block content
   include mixins/pokemonCard
   div.container
+    div.add-button-row
+      a.button.save(href='/add') Add Pokemon Card
     each card in cards
       +pokemonCard(card)

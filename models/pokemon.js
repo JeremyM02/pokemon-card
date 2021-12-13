@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     secondMoveDamage: DataTypes.INTEGER, //number
     weaknessTypeImage: DataTypes.STRING, //image
     resistanceTypeImage: DataTypes.STRING, //image
-    retreatCostAmount: DataTypes.STRING, //number
+    retreatCostAmount: DataTypes.INTEGER, //number
     retreatCostImage: DataTypes.STRING //image
   }, {
     sequelize,

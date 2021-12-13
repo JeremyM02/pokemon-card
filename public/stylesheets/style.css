@@ -167,6 +167,15 @@ body {
   font-weight: bold;
 }
 
+.edit a{
+  color: black;
+}
+
+.add-button-row {
+  top: 0;
+  margin: 5px;
+  position: absolute;
+}
 input{
   margin-left: 5px;
 }

@@ -1,36 +1,38 @@
 mixin pokemonCard(card)
 
-    .container
-        each card in cards
-            div(class=`card ${card.pokemonName}`)
-                .card-row.header
-                    p.name=card.pokemonName
-                    p.healthpoints=card.healthpoints
-                    img.type(src=card.pokemonType)
-                img.pokemon-img(src=card.pokemonImage)
-                .card-row.move-row.first
-                    -for(let i = 0; i<card.firstMoveAmount; i++)
-                    img.type(src=card.firstMoveImage)
 
-                    p.move-name=card.firstMoveName
-                    p.damage=card.firstMoveDamage
-                .card-row.move-row.second
-                    -for(let i = 0; i<card.secondMoveAmount; i++)
-                    img.type(src=card.secondMoveImage)
 
-                    p.move-name=card.secondMoveName
-                    p.damage=card.secondMoveDamage
-                .card-row.description-row
-                    p weakness
-                    p resistance
-                    p retreat cost
-                .card-row.description-type-row
-                    .weakness.type-row
-                        img.type(src=card.weaknessTypeImage)
-                    .resistance.type-row
-                        img.type(src=card.resistanceTypeImage)
-                    .retreat-cost.type-row
-                        - for(let i = 0; i<card.retreatCostAmount; i++)
-                        img.type(src=card.retreatCostImage)
+    div(class=`card ${card.pokemonName}`)
+        .card-row.header
+            p.name=card.pokemonName
+            p.healthpoints=card.healthpoints
+            img.type(src=card.pokemonType)
+        img.pokemon-img(src=card.pokemonImage)
+        .card-row.move-row.first
+            -for(let i = 0; i<card.firstMoveAmount; i++)
+            img.type(src=card.firstMoveImage)
+
+            p.move-name=card.firstMoveName
+            p.damage=card.firstMoveDamage
+        .card-row.move-row.second
+            -for(let i = 0; i<card.secondMoveAmount; i++)
+            img.type(src=card.secondMoveImage)
+
+            p.move-name=card.secondMoveName
+            p.damage=card.secondMoveDamage
+        .card-row.description-row
+            p weakness
+            p resistance
+            p retreat cost
+        .card-row.description-type-row
+            .weakness.type-row
+                img.type(src=card.weaknessTypeImage)
+            .resistance.type-row
+                img.type(src=card.resistanceTypeImage)
+            .retreat-cost.type-row
+                - for(let i = 0; i<card.retreatCostAmount; i++)
+                img.type(src=card.retreatCostImage)
+            .edit
+                a(href=`/edit/${card.id}`) Edit
 
 
