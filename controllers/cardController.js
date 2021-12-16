@@ -1,19 +1,30 @@
 const {Pokemon} = require('../models');
 const types = ['Electric', 'Water', 'Ground', 'Rock', 'Grass', 'Poison', 'Fighting', 'Dragon', 'Fire'];
 
-
 module.exports.viewAll = async function(req, res) {
-    const cards = await Pokemon.findAll();
-    let searchType = 'Any';
     let searchTypes = ['Any'];
     for (let i = 0; i<types.length; i++) {
-        searchType.push(types[i]);
+        searchTypes.push(types[i]);
     }
-    // if (cards.length > 0) {
-    //     let randomIndex = getRandomInt(cards.length);
-    //     cards = [cards[randomIndex]]
-    // }
-    res.render('index', {cards, types:searchTypes, searchType});
+    let cardTable;
+    let searchType = req.query.elementType || 'Any';
+    let searchRandom = req.query.random || false;
+
+    if (searchType === 'Any') {
+        cardTable = await Pokemon.findAll();
+    } else {
+        cardTable = await Pokemon.findAll( {
+            where: {
+                elementType: searchType
+            }
+        });
+    }
+    if (cardTable.length > 0 && searchRandom) {
+        let randomIndex = getRandomInt(cardTable.length);
+        cardTable = [cardTable[randomIndex]];
+    }
+
+    res.render('index', {cardTable, types:searchTypes, searchType, searchRandom});
 };
 
 module.exports.renderEditForm = async function(req, res) {

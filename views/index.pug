@@ -7,11 +7,14 @@ block content
       div.form-input
         label(for='type') By Type
         select(id='type' name='type' autocomplete='off')
-          each type in types
-            option(value=type selected=(type === searchType)) #{type}
+          each elementType in types
+            option(value=type selected=(elementType === searchType)) #{elementType}
+        div.form-input
+          label(for='random') Random
+          input(type='checkbox' name='random' id='random' checked=searchRandom)
       button.button.save(type='submit') Filter
   div.container
     div.add-button-row
       a.button.save(href='/add') Add Pokemon Card
-    each card in cards
+    each card in cardTable
       +pokemonCard(card)
