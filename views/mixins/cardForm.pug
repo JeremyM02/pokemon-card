@@ -1,4 +1,4 @@
-mixin pokemonCard(card)
+mixin cardForm(card)
 
 
     div.form-panel
@@ -26,7 +26,7 @@ mixin pokemonCard(card)
                     label(for='first-move-amount') First move's energy cost:
                     select(id='first-move-amount' name='first-move-amount' autocomplete='off')
                         -for(let i = 1; i<= 4; i++)
-                        option(value=i selected = (first-move-amount === card.firstMoveAmount)) #{i}
+                            option(value=i selected = (first-move-amount === card.firstMoveAmount)) #{i}
                 div.form-input
                     label(for='first-move-damage') First move's damage:
                     input(type='text' id='first-move-damage' name='first-move-damage' value=card.firstMoveDamage)
@@ -40,7 +40,7 @@ mixin pokemonCard(card)
                     label(for='second-move-amount') Second move's energy cost:
                     select(id='second-move-amount' name='second-move-amount' autocomplete='off')
                         -for(let i = 1; i<= 4; i++)
-                        option(value=i selected = (second-move-amount === card.secondMoveDamage)) #{i}
+                            option(value=i selected = (second-move-amount === card.secondMoveDamage)) #{i}
                 div.form-input
                     label(for='second-move-damage') Second move's damage:
                     input(type='text' id='second-move-damage' name='second-move-damage' value=card.secondMoveDamage)
@@ -54,7 +54,7 @@ mixin pokemonCard(card)
                     label(for='retreat-cost') Energy needed for Pokemon's retreat:
                     select(id='retreat-cost' name='retreat-cost' autocomplete='off')
                         -for(let i = 1; i<= 3; i++)
-                        option(value=i selected = (retreat-cost === card.retreatCostAmount)) #{i}
+                            option(value=i selected = (retreat-cost === card.retreatCostAmount)) #{i}
                 div.form-input
                     label(for='retreat-image') Pokemon's element needed for retreat:
                     input(type='text' id='retreat-image' name='retreat-imgae' value=card.retreatCostImage)

@@ -28,41 +28,32 @@ body {
           rgba(0,0,0,0.06) 0 1px 2px 0
 }
 
-.Pikachu{
+.Electric{
   background-color: #F5E993;
 }
-.Lapras {
+.Water {
   background-color: #6eb4e6;
 }
-.Sandshrew {
+.Ground {
   background-color: #e29449;
 }
-.Kabuto {
+.Rock {
   background-color: #eea537;
 }
-.Exeggutor {
+.Grass {
   background-color: #93c98a;
 }
-.Ekans {
+.Poison {
   background-color: #bc83ba;
 }
-.Rhyhorn {
-  background-color: #d7852d;
-}
-.Hitmonchan {
+.Fighting {
   background-color: #fd7448;
 }
-.Dragonair {
+.Dragon {
   background-color: #e7e1df;
 }
-.Nidorina {
-  background-color: #b48bbf;
-}
-.Ponyta {
+.Fire {
   background-color: #ebaf7d;
-}
-.Ninetails {
-  background-color: #f2643f;
 }
 
 

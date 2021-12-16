@@ -29,7 +29,8 @@ module.exports = (sequelize, DataTypes) => {
     weaknessTypeImage: DataTypes.STRING, //image
     resistanceTypeImage: DataTypes.STRING, //image
     retreatCostAmount: DataTypes.INTEGER, //number
-    retreatCostImage: DataTypes.STRING //image
+    retreatCostImage: DataTypes.STRING, //image
+    elementType: DataTypes.STRING//text
   }, {
     sequelize,
     modelName: 'Pokemon',

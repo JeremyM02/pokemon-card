@@ -2,7 +2,7 @@ mixin pokemonCard(card)
 
 
 
-    div(class=`card ${card.pokemonName}`)
+    div(class=`card ${card.elementType}`)
         .card-row.header
             p.name=card.pokemonName
             p.healthpoints=card.healthpoints

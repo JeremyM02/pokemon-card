@@ -1,9 +1,19 @@
 const {Pokemon} = require('../models');
+const types = ['Electric', 'Water', 'Ground', 'Rock', 'Grass', 'Poison', 'Fighting', 'Dragon', 'Fire'];
 
 
 module.exports.viewAll = async function(req, res) {
     const cards = await Pokemon.findAll();
-    res.render('index', {cards});
+    let searchType = 'Any';
+    let searchTypes = ['Any'];
+    for (let i = 0; i<types.length; i++) {
+        searchType.push(types[i]);
+    }
+    // if (cards.length > 0) {
+    //     let randomIndex = getRandomInt(cards.length);
+    //     cards = [cards[randomIndex]]
+    // }
+    res.render('index', {cards, types:searchTypes, searchType});
 };
 
 module.exports.renderEditForm = async function(req, res) {
@@ -14,7 +24,7 @@ module.exports.renderEditForm = async function(req, res) {
 };
 
 module.exports.updateCard = async function(req, res) {
-    await Card.update(
+    await Pokemon.update(
         {
             pokemonName: req.body.pokemonName, //text
             healthpoints: req.body.healthpoints, //text
@@ -31,7 +41,8 @@ module.exports.updateCard = async function(req, res) {
             weaknessTypeImage: req.body.weaknessTypeImage, //image
             resistanceTypeImage: req.body.resistanceTypeImage, //image
             retreatCostAmount: req.body.retreatCostAmount, //number
-            retreatCostImage: req.body.retreatCostImage //image
+            retreatCostImage: req.body.retreatCostImage, //image
+            elementType: req.body.elementType //text
         },
                 {
             where:
@@ -59,13 +70,14 @@ module.exports.renderAddForm = function(req, res) {
         weaknessTypeImage: "", //image
         resistanceTypeImage: "", //image
         retreatCostAmount: 1, //number
-        retreatCostImage: "" //image
+        retreatCostImage: "", //image
+        elementType: "" //text
     };
     res.render('add', {card});
 };
 
 module.exports.addCard = async function(req, res) {
-    await Card.create(
+    await Pokemon.create(
         {
             pokemonName: req.body.pokemonName, //text
             healthpoints: req.body.healthpoints, //text
@@ -82,8 +94,13 @@ module.exports.addCard = async function(req, res) {
             weaknessTypeImage: req.body.weaknessTypeImage, //image
             resistanceTypeImage: req.body.resistanceTypeImage, //image
             retreatCostAmount: req.body.retreatCostAmount, //number
-            retreatCostImage: req.body.retreatCostImage //image
+            retreatCostImage: req.body.retreatCostImage, //image
+            elementType: req.body.elementType //text
         });
     res.redirect('/');
 };
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
 

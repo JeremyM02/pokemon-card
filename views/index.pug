@@ -3,6 +3,14 @@ extends layout
 block content
   include mixins/pokemonCard
   div.container
+    form(action='/' method='get')
+      div.form-input
+        label(for='type') By Type
+        select(id='type' name='type' autocomplete='off')
+          each type in types
+            option(value=type selected=(type === searchType)) #{type}
+      button.button.save(type='submit') Filter
+  div.container
     div.add-button-row
       a.button.save(href='/add') Add Pokemon Card
     each card in cards
